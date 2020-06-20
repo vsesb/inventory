@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/invoice" name="invoice-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/{invoice}">
+        <inSequence>
+            <log level="full">
+                <property name="LogPoint" value="Request Received ...."/>
+            </log>
+            <call>
+                <endpoint key="src-invoice-endpoint"/>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <log>
+                <property expression="$ctx:ERROR_MESSAGE" name="message"/>
+            </log>
+        </faultSequence>
+    </resource>
+</api>

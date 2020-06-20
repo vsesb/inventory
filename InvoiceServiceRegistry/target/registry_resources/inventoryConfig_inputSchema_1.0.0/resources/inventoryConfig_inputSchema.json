@@ -1,0 +1,61 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "invoiceId" : {
+      "id" : "http://wso2jsonschema.org/invoiceId",
+      "type" : "number"
+    },
+    "invoiceAmt" : {
+      "id" : "http://wso2jsonschema.org/invoiceAmt",
+      "type" : "string"
+    },
+    "currency" : {
+      "id" : "http://wso2jsonschema.org/currency",
+      "type" : "string"
+    },
+    "creditPayment" : {
+      "id" : "http://wso2jsonschema.org/creditPayment",
+      "type" : "boolean"
+    },
+    "onlinePayment" : {
+      "id" : "http://wso2jsonschema.org/onlinePayment",
+      "type" : "boolean"
+    },
+    "cashPayment" : {
+      "id" : "http://wso2jsonschema.org/cashPayment",
+      "type" : "boolean"
+    },
+    "address_line" : {
+      "id" : "http://wso2jsonschema.org/address_line",
+      "type" : "string"
+    },
+    "address_city" : {
+      "id" : "http://wso2jsonschema.org/address_city",
+      "type" : "string"
+    },
+    "address_state" : {
+      "id" : "http://wso2jsonschema.org/address_state",
+      "type" : "string"
+    },
+    "address_pincode" : {
+      "id" : "http://wso2jsonschema.org/address_pincode",
+      "type" : "string"
+    },
+    "whenCreated" : {
+      "id" : "http://wso2jsonschema.org/whenCreated",
+      "type" : "string"
+    },
+    "whenUpdated" : {
+      "id" : "http://wso2jsonschema.org/whenUpdated",
+      "type" : "null"
+    },
+    "whenDeleted" : {
+      "id" : "http://wso2jsonschema.org/whenDeleted",
+      "type" : "null"
+    }
+  }
+}
