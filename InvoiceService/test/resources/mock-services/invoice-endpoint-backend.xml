@@ -1,0 +1,23 @@
+<mock-service>
+    <service-name>src-invoice-endpoint</service-name>
+    <port>8081</port>
+    <context>/invoice</context>
+    <resources>
+        <resource>
+            <sub-context>/</sub-context>
+            <method>GET</method>
+            <request>
+                <headers>
+                    <header name="Content-Type" value="application/json"/>
+                </headers>
+            </request>
+            <response>
+                <status-code>200</status-code>
+                <payload><![CDATA[{"invoiceId":100,"invoiceAmt":"10000.00","currency":"USD","creditPayment":"false","onlinePayment":"true","cashPayment":"false","address_line":"203,kvr towers, lingampally","address_city":"hyderabad","address_state":"Telangana","address_pincode":"500050","whenCreated":"2019-06-14"}]]></payload>
+                <headers>
+                    <header name="Content-Type" value="application/json"/>
+                </headers>
+            </response>
+        </resource>
+    </resources>
+</mock-service>

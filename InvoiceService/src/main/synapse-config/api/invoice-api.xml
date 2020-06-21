@@ -8,6 +8,11 @@
             <call>
                 <endpoint key="src-invoice-endpoint"/>
             </call>
+            <datamapper config="gov:datamapper/InvoiceMapperConfig.dmc" inputSchema="gov:datamapper/InvoiceMapperConfig_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/InvoiceMapperConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/InvoiceMapperConfig_xsltStyleSheet.xml"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <log>
+                <property name="logpoint" value="service completed ...."/>
+            </log>
             <respond/>
         </inSequence>
         <outSequence/>

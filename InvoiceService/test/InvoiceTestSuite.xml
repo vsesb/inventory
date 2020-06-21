@@ -1,0 +1,54 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/InvoiceService/src/main/synapse-config/api/invoice-api.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/InvoiceService/src/main/synapse-config/endpoints/src-invoice-endpoint.xml</artifact>
+            <artifact>/InvoiceService/src/main/synapse-config/endpoints/src-invoice-endpoint.xml</artifact>
+            <artifact>/InvoiceService/src/main/synapse-config/api/invoice-api.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources>
+            <registry-resource>
+                <file-name>InvoiceMapperConfig_xsltStyleSheet.xml</file-name>
+                <artifact>\InvoiceServiceRegistry\InvoiceMapperConfig_xsltStyleSheet.xml</artifact>
+                <registry-path>/_system/governance/datamapper</registry-path>
+                <media-type>text/plain</media-type>
+            </registry-resource>
+            <registry-resource>
+                <file-name>InvoiceMapperConfig.dmc</file-name>
+                <artifact>\InvoiceServiceRegistry\InvoiceMapperConfig.dmc</artifact>
+                <registry-path>/_system/governance/datamapper</registry-path>
+                <media-type>text/plain</media-type>
+            </registry-resource>
+            <registry-resource>
+                <file-name>InvoiceMapperConfig_inputSchema.json</file-name>
+                <artifact>\InvoiceServiceRegistry\InvoiceMapperConfig_inputSchema.json</artifact>
+                <registry-path>/_system/governance/datamapper</registry-path>
+                <media-type>text/plain</media-type>
+            </registry-resource>
+        </registry-resources>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="TestCase1">
+            <input>
+                <request-path>/invoice</request-path>
+                <request-method>GET</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{"invoiceId":100,"invoiceAmt":"10000.00","currency":"USD","creditPayment":"false","onlinePayment":"true","cashPayment":"false","address_line":"203,kvr towers, lingampally","address_city":"hyderabad","address_state":"Telangana","address_pincode":"500050","whenCreated":"2019-06-14"}]]></expected>
+                    <message>Invalid Response</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services>
+        <mock-service>/InvoiceService/test/resources/mock-services/invoice-endpoint-backend.xml</mock-service>
+    </mock-services>
+</unit-test>

@@ -1,0 +1,28 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.invoiceId = inputroot.invoiceId;
+outputroot.invoiceAmt = inputroot.invoiceAmt;
+outputroot.currency = inputroot.currency;
+outputroot.creditPayment = (inputroot.creditPayment).toString();
+outputroot.onlinePayment = (inputroot.onlinePayment).toString();
+outputroot.cashPayment = (inputroot.cashPayment).toString();
+outputroot.address_line = inputroot.address_line;
+outputroot.address_city = inputroot.address_city;
+outputroot.address_state = inputroot.address_state;
+outputroot.address_pincode = inputroot.address_pincode;
+outputroot.whenCreated = (inputroot.whenCreated).toString().substring(0,0+10);
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
