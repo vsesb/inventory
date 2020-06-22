@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property expression="get-property('ERROR_CODE')" name="errorCode"/>
+        <property expression="get-property('ERROR_MESSAGE')" name="errorMessage"/>
+        <property expression="get-property('ERROR_DETAIL')" name="errorDetails"/>
+    </log>
+    <makefault version="soap11">
+        <code value="soap11Env:VersionMismatch" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <reason value="Service not available"/>
+        <detail>Internal Error</detail>
+    </makefault>
+    <respond/>
+</sequence>

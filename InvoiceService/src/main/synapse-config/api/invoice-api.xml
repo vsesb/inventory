@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/invoice" name="invoice-api" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="GET" uri-template="/{invoice}">
+    <resource faultSequence="faultSequence" methods="GET" uri-template="/{invoice}">
         <inSequence>
             <log level="full">
                 <property name="LogPoint" value="Request Received ...."/>
@@ -10,16 +10,8 @@
             </call>
             <datamapper config="gov:datamapper/InvoiceMapperConfig.dmc" inputSchema="gov:datamapper/InvoiceMapperConfig_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/InvoiceMapperConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/InvoiceMapperConfig_xsltStyleSheet.xml"/>
             <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
-            <log>
-                <property name="logpoint" value="service completed ...."/>
-            </log>
             <respond/>
         </inSequence>
         <outSequence/>
-        <faultSequence>
-            <log>
-                <property expression="$ctx:ERROR_MESSAGE" name="message"/>
-            </log>
-        </faultSequence>
     </resource>
 </api>

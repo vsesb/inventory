@@ -20,8 +20,10 @@
     <com.example.InvoiceService.resource_._NewConfig_outputSchema>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._NewConfig_outputSchema>
     <com.example.InvoiceService.resource_._NewConfig>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._NewConfig>
     <com.example.InvoiceService.resource_._InvoiceMapperConfig_outputSchema>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._InvoiceMapperConfig_outputSchema>
+    <com.example.InvoiceService.proxy-service_._invoice-proxy>capp/EnterpriseServiceBus</com.example.InvoiceService.proxy-service_._invoice-proxy>
     <com.example.InvoiceService.resource_._inventoryConfig_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._inventoryConfig_xsltStyleSheet>
     <com.example.InvoiceService.resource_._inventoryConfig_inputSchema>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._inventoryConfig_inputSchema>
+    <com.example.InvoiceService.sequence_._faultSequence>capp/EnterpriseServiceBus</com.example.InvoiceService.sequence_._faultSequence>
     <com.example.InvoiceService.api_._invoice-api>capp/EnterpriseServiceBus</com.example.InvoiceService.api_._invoice-api>
     <com.example.InvoiceService.resource_._NewConfig_inputSchema>capp/EnterpriseServiceBus</com.example.InvoiceService.resource_._NewConfig_inputSchema>
   </properties>
@@ -39,8 +41,20 @@
       <type>zip</type>
     </dependency>
     <dependency>
+      <groupId>com.example.InvoiceService.sequence</groupId>
+      <artifactId>faultSequence</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.InvoiceService.resource</groupId>
       <artifactId>InvoiceMapperConfig_outputSchema</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.InvoiceService.resource</groupId>
+      <artifactId>InvoiceMapperConfig_inputSchema</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
@@ -52,15 +66,15 @@
     </dependency>
     <dependency>
       <groupId>com.example.InvoiceService.resource</groupId>
-      <artifactId>InvoiceMapperConfig_inputSchema</artifactId>
+      <artifactId>InvoiceMapperConfig_xsltStyleSheet</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>com.example.InvoiceService.resource</groupId>
-      <artifactId>InvoiceMapperConfig_xsltStyleSheet</artifactId>
+      <groupId>com.example.InvoiceService.proxy-service</groupId>
+      <artifactId>invoice-proxy</artifactId>
       <version>1.0.0</version>
-      <type>zip</type>
+      <type>xml</type>
     </dependency>
   </dependencies>
   <repositories>

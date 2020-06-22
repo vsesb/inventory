@@ -5,4 +5,10 @@
     <artifact name="invoice-api" groupId="com.example.InvoiceService.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/invoice-api.xml</file>
     </artifact>
+    <artifact name="faultSequence" groupId="com.example.InvoiceService.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faultSequence.xml</file>
+    </artifact>
+    <artifact name="invoice-proxy" groupId="com.example.InvoiceService.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/invoice-proxy.xml</file>
+    </artifact>
 </artifacts>

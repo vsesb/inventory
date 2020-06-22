@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="src-invoice-endpoint" xmlns="http://ws.apache.org/ns/synapse">
     <http method="get" uri-template="http://localhost:8081/invoice/{uri.var.invoice}">
+        <timeout>
+            <duration>2000</duration>
+            <responseAction>fault</responseAction>
+        </timeout>
         <suspendOnFailure>
+            <errorCodes>500</errorCodes>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1.0</progressionFactor>
         </suspendOnFailure>
         <markForSuspension>
+            <errorCodes>500</errorCodes>
             <retriesBeforeSuspension>0</retriesBeforeSuspension>
         </markForSuspension>
     </http>
